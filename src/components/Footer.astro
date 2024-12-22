@@ -1,0 +1,90 @@
+<footer class="text-light pt-4 pb-2 section-bg text-center">
+  <div class="container">
+    <div class="row">
+      <!-- Sección de Enlaces -->
+      <div class="col-md-4 mb-3">
+        <h5>Enlaces</h5>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 mt-lg-2">
+          <li class="nav-item">
+            <a class="nav-link nav-hover active" aria-current="page" href="#"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="/src/pages/products.astro"
+              >Productos</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sección de Contacto -->
+      <div class="col-md-4 mb-3">
+        <h5>Contacto</h5>
+        <p class="mb-1">Teléfono: +56 9 1234 5678</p>
+        <p>Email: contacto@ejemplo.com</p>
+        <p>Dirección: Calle Ficticia 123, Ciudad, País</p>
+      </div>
+
+      <!-- Sección de Redes Sociales -->
+      <div class="col-md-4 mb-3">
+        <h5>Síguenos</h5>
+        <div class="hstack gap-4 justify-content-center">
+          <a
+            href="https://www.facebook.com/?locale=es_LA"
+            class="text-light p-2"
+          >
+            <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://x.com/?lang=es" class="text-light p-2">
+            <i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://www.instagram.com/?hl=es" class="text-light p-2">
+            <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://www.linkedin.com/home" class="text-light p-2">
+            <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Línea de separación y derechos reservados -->
+    <hr class="border-white opacity-100" />
+    <div class="text-center">
+      <p class="mb-0">
+        &copy; 2024 Clothes Shop. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .nav-link.active {
+    color: #fff;
+  }
+
+  .nav-hover:hover,
+  .nav-hover.active {
+    color: white !important;
+    text-decoration: underline;
+  }
+  .section-bg {
+    background-color: #080808;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='24' viewBox='0 0 12 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c6c4c9' fill-opacity='0.23'%3E%3Cpath d='M2 0h2v12H2V0zm1 20c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-1 4h2v12H8V12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    /* background-repeat: no-repeat;
+    background-position: center; */
+  }
+</style>
+
+<script>
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // Remover la clase 'active' de todos los elementos
+      navLinks.forEach((link) => link.classList.remove("active"));
+      // Agregar la clase 'active' solo al elemento clickeado
+      link.classList.add("active");
+    });
+  });
+</script>

@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import Slide1 from "../assets/slide1.png";
+import Slide2 from "../assets/slide2.png";
+import Slide3 from "../assets/slide3.png";
+import Menu from "../components/Menu.astro";
+---
+
+<header>
+  <Menu />
+  <!-- Carousel -->
+  <div
+    id="carouselHeader"
+    class="carousel slide mb-6 w-100 section-bg"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="image-overlay">
+          <Image
+            src={Slide1}
+            class="d-block w-40"
+            alt="Ropa para cada ocasión"
+          />
+          <div class="container">
+            <div
+              class="carousel-caption text-end"
+              style="padding-bottom: 10rem"
+            >
+              <h1 style="font-size: 3rem;">
+                Activa tu <span class="text-color">Estilo</span>
+              </h1>
+              <p class="lead">
+                <strong>Ropa para cada ocasión</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="image-overlay">
+          <div class="container d-flex justify-content-center">
+            <div class="carousel-caption" style="padding-bottom: 10rem;">
+              <h1 style="font-size: 3rem;">
+                Estilo y <span class="text-color">Comodidad</span>
+              </h1>
+              <p class="lead">
+                <strong>La mejor selección de Ropa</strong>
+              </p>
+            </div>
+            <Image
+              class="d-flex w-40"
+              src={Slide2}
+              alt="La mejor selección de Ropa"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="image-overlay">
+          <div class="d-flex justify-content-between">
+            <div class="container">
+              <div
+                class="carousel-caption text-start"
+                style="padding-bottom: 10rem"
+              >
+                <h1 style="font-size: 3rem;">
+                  Exprime tu <span class="text-color">Potencial</span>
+                </h1>
+                <p class="lead">
+                  <strong>Ropa que se mueve contigo</strong>
+                </p>
+              </div>
+            </div>
+            <Image class="w-40" src={Slide3} alt="Ropa que se mueve contigo" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselHeader"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselHeader"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <style>
+    .section-bg {
+      background-image: url("../assets/fondo_main.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .image-overlay {
+      position: relative;
+    }
+
+    .image-overlay::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0, 0.1);
+    }
+
+    .carousel-caption {
+      text-shadow: 2px 2px 2px #000;
+    }
+
+    .lead {
+      text-shadow: 1px 2px 1px #000;
+    }
+
+    .text-color {
+      color: #a42836;
+    }
+  </style>
+</header>

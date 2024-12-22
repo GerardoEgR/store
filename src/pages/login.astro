@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Clothes Shop">
+  <main>
+    <div class="container">
+      <div class="wrap rounded">
+        <!-- Imagen -->
+        <div class="img"></div>
+        <!-- Formulario -->
+        <div class="login-wrap">
+          <div>
+            <h1 class="mb-4" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);">
+              Iniciar sesión en ClotheShop
+            </h1>
+          </div>
+          <form action="#" class="signin-form">
+            <div class="form-group">
+              <label
+                class="label"
+                style="text-shadow: 1px 2px 4px rgba(0,0,0,0.4);">Email</label
+              >
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="mail@gmail.com"
+                required
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label
+                class="label"
+                for="password"
+                style="text-shadow: 1px 2px 4px rgba(0,0,0,0.4);"
+                >Password</label
+              >
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <div class="d-flex justify-content-end align-items-center">
+                <a href="#" class="text-primary">Registrarse</a>
+              </div>
+            </div>
+            <div class="form-group d-grid gap-2">
+              <a
+                id="btn-submit"
+                class="form-control btn rounded submit signin-button"
+                type="button"
+                href=""
+              >
+                Iniciar sesión
+              </a>
+
+              <a
+                class="form-control btn btn-secondary rounded submit back"
+                type="button"
+                href="/"
+              >
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+
+  main {
+    font-size: 1rem;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+    font-weight: normal;
+    background-color: #d9d9d9;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .img {
+    flex: 1; /* La imagen ocupa el 50% del contenedor */
+    background: url("../assets/login-img.jpg") no-repeat center center/cover;
+    border-radius: 5px 0 0 5px; /* Esquinas redondeadas */
+  }
+
+  .login-wrap {
+    flex: 1; /* El formulario ocupa el otro 50% */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se alinee en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding: 2rem;
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+  }
+  .signin-button {
+    background-color: #a62940;
+    color: #fff;
+  }
+
+  .signin-button:hover {
+    background-color: #591623;
+    color: #fff;
+  }
+
+  .back {
+    margin-bottom: 1rem;
+  }
+</style>
+
+<script>
+  const form = document.querySelector(".signin-form") as HTMLFormElement;
+  const btnSubmit = document.querySelector("#btn-submit") as HTMLButtonElement;
+  // const { signIn } = await import("auth-astro/client");
+  const formData = new FormData(form);
+</script>

@@ -1,0 +1,33 @@
+---
+import Menu from "../components/Menu.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Clothes Shop">
+  <main>
+    <Menu />
+    <div class="container">
+      <div class="row">
+        <div class="mt-5 mx-auto text-center">
+          <h1
+            style="font-size: 3.5rem; text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+          >
+            Carrito de Compras
+          </h1>
+          <hr class="title-divider my-4 mb-5" />
+        </div>
+        <!-- <div class="mt-5 mx-auto text-center">Listado de Cards</div> -->
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .title-divider {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #a42836;
+    opacity: inherit;
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+</style>

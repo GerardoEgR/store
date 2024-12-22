@@ -1,0 +1,156 @@
+---
+import { Image } from "astro:assets";
+import CalCat from "../assets/cat-main.jpg";
+import GorCat from "../assets/gor-main.jpg";
+import PolCat from "../assets/pol-main.jpg";
+import PoleCat from "../assets/pole-main.jpg";
+---
+
+<section id="categories" class="pb-5">
+  <div class="container pt-3">
+    <div class="row mb-5">
+      <div class="col-lg-12 text-center">
+        <h2
+          class="pt-5"
+          style="font-size: 3.5rem; text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+        >
+          Categorías Principales
+        </h2>
+        <hr class="title-divider my-4 mb-5" />
+      </div>
+    </div>
+
+    <div class="row py-5 featurette align-items-center">
+      <div
+        class="col-md-7 pe-5 hbg d-flex justify-content-center align-items-center"
+        style="height: 500px;"
+      >
+        <h2
+          class="featurette-heading text-center display-5 mb-5"
+          style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+        >
+          Poleras y Camisetas
+        </h2>
+      </div>
+      <div class="col-md-5">
+        <Image
+          class="d-block w-100 h-50 rounded-5 border shadow"
+          src={PolCat}
+          alt="Poleras"
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider mb-5 mt-5" />
+
+    <div class="row py-5 featurette align-items-center">
+      <div
+        class="col-md-7 order-md-2 ps-5 hbg d-flex justify-content-center align-items-center"
+        style="height: 500px;"
+      >
+        <h2
+          class="featurette-heading text-center display-5 mb-5"
+          style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+        >
+          Gorros y Gorras
+        </h2>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <Image
+          class="d-block w-100 h-50 rounded-5 border shadow"
+          src={GorCat}
+          alt="Gorros"
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider mb-5 mt-5" />
+
+    <div class="row py-5 featurette align-items-center">
+      <div
+        class="col-md-7 pe-5 text-center hbg d-flex justify-content-center align-items-center"
+        style="height: 500px;"
+      >
+        <h2
+          class="featurette-heading display-5 mb-5"
+          style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+        >
+          Polerones
+        </h2>
+      </div>
+      <div class="col-md-5">
+        <Image
+          class="d-block w-100 h-50 rounded-5 border shadow"
+          src={PoleCat}
+          alt="Polerones"
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider mb-5 mt-5" />
+
+    <div class="row py-5 featurette align-items-center">
+      <div
+        class="col-md-7 order-md-2 ps-5 hbg d-flex justify-content-center align-items-center"
+        style="height: 500px;"
+      >
+        <h2
+          class="featurette-heading text-center display-5 mb-5"
+          style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);"
+        >
+          Calcetines
+        </h2>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <Image
+          class="d-block w-100 h-50 rounded-5 border shadow"
+          src={CalCat}
+          alt="Calcetines"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hbg {
+    position: relative; /* Para que el pseudo-elemento se posicione correctamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .hbg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/blob.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Ajusta la opacidad según necesites */
+    z-index: 1; /* Asegura que el fondo esté detrás del texto */
+  }
+
+  .hbg h2 {
+    position: relative;
+    z-index: 2; /* Coloca el texto sobre el pseudo-elemento */
+  }
+  .featurette-divider {
+    max-width: 100%;
+    border-width: 2px;
+    border-color: #a42836;
+    opacity: inherit;
+  }
+  .title-divider {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #a42836;
+    opacity: inherit;
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+</style>
