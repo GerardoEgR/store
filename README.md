@@ -1,48 +1,45 @@
-# Astro Starter Kit: Basics
+# Descripción del Proyecto
+Este proyecto es una tienda de ropa desarrollada con Astro que permite el registro y autenticación de usuarios con distintos roles. Además, incluye funcionalidades para la administración de productos, gestión de imágenes asociadas y almacenamiento seguro de datos en una base de datos PostgreSQL.
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Características principales proyecto completo
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+* Registro y autenticación de usuarios:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+    * Sistema de autenticación seguro con soporte para múltiples roles.
+    * Gestión de sesiones y protección de rutas según el rol del usuario.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+* Interfaz de usuario:
 
-## 🚀 Project Structure
+    * Diseño moderno y responsivo desarrollado con Astro para una experiencia fluida en dispositivos móviles y de escritorio.
+    * Formularios intuitivos para el registro de usuarios, inicio de sesión y gestión de productos.
 
-Inside of your Astro project, you'll see the following folders and files:
+* Administración de productos:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+    * CRUD (Crear, Leer, Actualizar, Eliminar) para la gestión de productos de la tienda.
+    * Soporte para cargar imágenes de productos e integración con base de datos.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+* Base de datos en PostgreSQL:
 
-## 🧞 Commands
+    * Estructura relacional que almacena de manera eficiente la información de usuarios, roles, productos e imágenes.
 
-All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Instalación y Ejecución
 
-## 👀 Want to learn more?
+* Clonar el repositorio
+* Navegar al directorio de la descarga
+* Instalar las dependencias: ``` npm install ```
+* Clonar .env.template y renombrar a .env
+* Cambiar las variables de entorno
+* Iniciar el proyecto: ``` npm run dev ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Tecnologías Utilizadas
+
+* Astro
+* Bootstrap
+* PostgreSQL
+
+
+## 👀 Quieres aprender más?
+
+* [Documentación de Astro](https://docs.astro.build) o [Servidor de Discord](https://astro.build/chat).
