@@ -9,6 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.1"
+    "@astrojs/netlify": "6.0.1",
+    "@auth/core": "0.37.4",
+    "@auth/prisma-adapter": "2.7.4",
+    "@prisma/client": "6.1.0",
+    "@types/bcryptjs": "2.4.6",
+    "astro": "5.1.1",
+    "auth-astro": "4.2.0",
+    "bcryptjs": "2.4.3",
+    "sweetalert2": "11.15.3",
+    "uuid": "11.0.3"
+  },
+  "devDependencies": {
+    "prisma": "6.1.0"
   }
 }

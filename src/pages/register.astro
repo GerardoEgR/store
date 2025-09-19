@@ -11,11 +11,30 @@ import Layout from "../layouts/Layout.astro";
         <!-- Formulario -->
         <div class="login-wrap">
           <div>
-            <h1 class="mb-5" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);">
-              Iniciar sesión en ClotheShop
+            <h1 class="mb-4" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.7);">
+              Registrarse en ClotheShop
             </h1>
           </div>
-          <form id="signin-form" class="signin-form">
+          <form
+            id="register-form"
+            class="register-form"
+            action="/api/auth/register"
+            method="post"
+          >
+            <div class="form-group mb-3">
+              <label
+                for="name"
+                class="form-label mb-0"
+                style="text-shadow: 1px 2px 4px rgba(0,0,0,0.4);">Nombre</label
+              >
+              <input
+                id="name"
+                name="name"
+                class="form-control"
+                type="text"
+                placeholder="John Doe"
+              />
+            </div>
             <div class="form-group mb-3">
               <label
                 for="email"
@@ -24,12 +43,13 @@ import Layout from "../layouts/Layout.astro";
               >
               <input
                 id="email"
+                name="email"
                 class="form-control"
                 type="email"
                 placeholder="mail@gmail.com"
               />
             </div>
-            <div class="form-group mb-5">
+            <div class="form-group mb-4">
               <label
                 for="password"
                 class="form-label mb-0"
@@ -38,21 +58,22 @@ import Layout from "../layouts/Layout.astro";
               >
               <input
                 id="password"
+                name="password"
                 type="password"
                 class="form-control"
                 placeholder="Enter your password"
               />
-              <!-- <div class="d-flex justify-content-end align-items-center">
-                <a href="/register" class="text-primary">Registrarse</a>
-              </div> -->
+              <div class="d-flex justify-content-end align-items-center">
+                <a href="/login" class="text-primary">¿Ya tienes una cuenta?</a>
+              </div>
             </div>
             <div class="form-group d-grid gap-2">
               <button
                 id="btn-submit"
-                class="form-control btn rounded submit signin-button mt-5"
+                class="form-control btn rounded submit signin-button"
                 type="submit"
               >
-                Iniciar sesión
+                Ingresar
               </button>
 
               <a
@@ -134,13 +155,12 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 
-<script>
+<!-- <script>
+  import { actions } from "astro:actions";
   import Swal from "sweetalert2";
 
   const form = document.querySelector("form") as HTMLFormElement;
   const btnSubmit = document.querySelector("#btn-submit") as HTMLButtonElement;
-
-  const { signIn } = await import("auth-astro/client");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -148,21 +168,19 @@ import Layout from "../layouts/Layout.astro";
 
     const formData = new FormData(form);
 
-    const resp = await signIn({
-      email: formData.get("email") as string,
-      password: formData.get("password") as string,
-      redirect: false,
-    });
+    console.log("formData", form);
 
-    if (resp) {
-      Swal.fire({
-        icon: "error",
-        title: "Error de autenticación",
-        text: "Usuario o Contraseña no son correctos",
-      });
-      btnSubmit.removeAttribute("disabled");
-      return;
-    }
-    window.location.replace("/");
+    const { error } = await actions.registerUser(formData);
+
+    // if (error) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error de autenticación",
+    //     text: error.message,
+    //   });
+    //   btnSubmit.removeAttribute("disabled");
+    //   return;
+    // }
+    // window.location.replace("/protected");
   });
-</script>
+</script> -->

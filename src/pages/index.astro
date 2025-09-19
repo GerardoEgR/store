@@ -4,6 +4,12 @@ import Header from "../components/Header.astro";
 import Categories from "../components/ProductsCategory.astro";
 import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+const user = session?.user;
+console.log({ session, user });
 ---
 
 <Layout title="Clothes Shop">
